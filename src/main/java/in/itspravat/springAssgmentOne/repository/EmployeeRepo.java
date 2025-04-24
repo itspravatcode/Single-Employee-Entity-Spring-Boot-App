@@ -12,4 +12,7 @@ import java.util.List;
 public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
      List<Employee> findByDepartmentIgnoreCaseAndIsDeletedFalse(String department);
      Page<Employee> findAllByIsDeletedFalse(Pageable pageable);
+     List<Employee> findByNameContainingIgnoreCaseAndIsDeletedFalse(String name);
+     List<Employee> findBySalaryGreaterThanAndIsDeletedFalse(double salary);
+
 }

@@ -122,4 +122,15 @@ public class EmployeeServiceImple implements EmployeeService {
         return repo.findAllByIsDeletedFalse(pageable);
     }
 
+    @Override
+    public List<Employee> searchEmployeesByName(String name) {
+        return repo.findByNameContainingIgnoreCaseAndIsDeletedFalse(name);
+    }
+
+    @Override
+    public List<Employee> getEmployeesWithSalaryGreaterThan(double salary) {
+        return repo.findBySalaryGreaterThanAndIsDeletedFalse(salary);
+    }
+
+
 }

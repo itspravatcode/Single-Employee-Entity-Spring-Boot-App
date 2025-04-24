@@ -81,5 +81,16 @@ public class EmployeeController {
         return new ResponseEntity<>( service.getEmployeesByDepartment(department), HttpStatus.OK);
     }
 
+    @GetMapping("/employees/search")
+    public ResponseEntity<List<Employee>> searchEmployeesByName(@RequestParam String name) {
+        return new ResponseEntity<>(service.searchEmployeesByName(name), HttpStatus.OK);
+    }
+
+    @GetMapping("/employees/salary")
+    public ResponseEntity<List<Employee>> getEmployeesWithSalaryGreaterThan(@RequestParam double amount) {
+        return new ResponseEntity<>(service.getEmployeesWithSalaryGreaterThan(amount), HttpStatus.OK);
+    }
+
+
 
 }

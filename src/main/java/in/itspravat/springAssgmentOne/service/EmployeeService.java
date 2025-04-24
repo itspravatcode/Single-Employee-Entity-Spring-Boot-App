@@ -26,5 +26,10 @@ public interface EmployeeService {
 
     Page<Employee> getEmployeesWithPaginationAndSorting(int page, int size, String sortField, String sortDirection);
 
+    List<Employee> searchEmployeesByName(String name);
+
+    List<Employee> getEmployeesWithSalaryGreaterThan(double salary);
+
+
 
 }
